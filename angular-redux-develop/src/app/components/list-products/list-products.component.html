@@ -1,0 +1,56 @@
+<div class="bg-white">
+  <div class="mx-auto py-8 px-4">
+    <!-- <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+      Customers also purchased
+    </h2> -->
+
+    <div class="mt-6 grid grid-cols-4 gap-6">
+      <ng-container *ngFor="let product of products">
+        <div
+          class="rounded-lg border-4 border-dashed border-gray-200 p-2 grid content-between"
+        >
+          <div
+            class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80"
+          >
+            <img
+              src="{{ product.images[0] }}"
+              alt="Front of men&#039;s Basic Tee in black."
+              class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+            />
+          </div>
+          <div class="grid grid-cols-1 gap-4 content-between">
+            <span>
+              <h3 class="text-sm text-gray-700">
+                <a href="#">
+                  <span aria-hidden="true" class=""></span>
+                  {{ product.title }}
+                </a>
+              </h3>
+            </span>
+            <span>
+              <p class="mt-1 text-sm text-gray-500">
+                {{ product.description }}
+              </p>
+            </span>
+          </div>
+          <div class="mt-8 mx-auto grid grid-cols-2 gap-4 content-around">
+            <div>
+              <p class="pt-3 text-sm font-medium text-gray-900">
+                {{ product.price | currency }}
+              </p>
+            </div>
+            <div>
+              <button
+                (click)="submitBuy.emit(product)"
+                type="button"
+                class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+              >
+                Buy
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

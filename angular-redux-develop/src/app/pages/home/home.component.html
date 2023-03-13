@@ -1,0 +1,13 @@
+<div class="flex flex-row">
+  <app-list-products
+    [products]="products"
+    (submitBuy)="fillCartShopping($event)"
+  ></app-list-products>
+  <app-cart-shopping
+    [cartItems]="cartShopping"
+    (submitRemove)="removeCartItem($event)"
+    (submitPay)="checkout($event)"
+  ></app-cart-shopping>
+</div>
+
+<app-modal [(showModal)]="showModal" [total]="totalCheckout"></app-modal>
